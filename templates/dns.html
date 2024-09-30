@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Check Domain DNS</title>
+
+
+  
+</head>
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='apple-touch-icon-114x114-precomposed.png') }}">
+<body>
+  <div class="navbar"> 
+    <nav >
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="{{ url_for('index') }}" >Home</a>
+      </li>
+          <li class="nav-item">
+            <a href="{{ url_for('dns_check') }}" >DNS check</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ url_for('password_generator') }}" >Generate password</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url_for('get_ip_info') }}" >IP info</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('upload_file') }}" >ImapSync From File Beta</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('check_dkim') }}" >Mail Records</a>
+    </li>
+       
+      </ul>
+  </nav>
+
+
+  </div>
+
+
+
+  
+
+  <div class="container">
+
+    <h1>Check Domain DNS</h1>
+
+    <form action="{{ url_for('dns_check') }}" method="post">
+      <label for="domain">Domain:</label>
+      <input type="text" id="domain" name="domain" required>
+      <br>
+      <!-- <input type="submit" value="Check DNS"> -->
+      <button class="dns-button" type="submit" value="Check DNS">
+        
+        Check DNS
+
+      </button>
+
+    </form>
+  </div>
+  <div class="bottom-center-container">
+    <a href="{{ url_for('index') }}" class="bottom-center-button">Back</a> <br>
+  </div>
+  <div class="bottom-center-container">
+  </div>
+</body>
+</html>

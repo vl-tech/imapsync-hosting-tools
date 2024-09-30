@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IMAPSync Tool</title>
+  </head>
+  <body>
+    <h1>IMAPSync Tool</h1>
+    <form action="/run_imapsync" method="post">
+      <label for="imap_source">IMAP Source Server:</label>
+      <input type="text" id="imap_source" name="imap_source" required><br>
+
+      <label for="user_source">Source Username:</label>
+      <input type="text" id="user_source" name="user_source" required><br>
+
+      <label for="pass_source">Source Password:</label>
+      <input type="password" id="pass_source" name="pass_source" required><br>
+
+      <label for="imap_dest">IMAP Destination Server:</label>
+      <input type="text" id="imap_dest" name="imap_dest" required><br>
+
+      <label for="user_dest">Destination Username:</label>
+      <input type="text" id="user_dest" name="user_dest" required><br>
+
+      <label for="pass_dest">Destination Password:</label>
+      <input type="password" id="pass_dest" name="pass_dest" required><br>
+
+      <input type="submit" value="Run IMAPSync">
+    </form>
+    <div id="result"></div>
+
+    <script>
+      document.querySelector('form').onsubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const response = await fetch('/run_imapsync', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+        document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+      };
+    </script>
+  </body>
+</html>

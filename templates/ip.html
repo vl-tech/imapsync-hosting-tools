@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Checker</title>
+
+   
+   
+</head>
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='apple-touch-icon-114x114-precomposed.png') }}">
+
+<body>
+  <div class="navbar"> 
+    <nav >
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="{{ url_for('index') }}" >Home</a>
+      </li>
+          <li class="nav-item">
+            <a href="{{ url_for('dns_check') }}" >DNS check</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ url_for('password_generator') }}" >Generate password</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url_for('get_ip_info') }}" >IP info</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('upload_file') }}" >ImapSync From File Beta</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('check_dkim') }}" >Mail Records</a>
+    </li>
+       
+      </ul>
+  </nav>
+
+
+  </div>
+
+    <form method="POST" class="container">
+        <p>Your IP is: <span class="ip_color">{{ visitor_ip }} </span></p>
+        <label >Enter IP Address:</label>
+        <input type="text" id="ip_info" name="ip_info" placeholder="Enter IP Address">
+        <button class="dns-button" type="submit">Check IP</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li  style="padding-bottom: 5px;"><strong> {{ message }} </strong> </li>
+                {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+
+
+
+
+            </ul>
+    {% if ip_info %}
+        <div class="ip_result_container">
+            <h3 >IP Information:</h3>
+            <ul> 
+                <li  style="padding-bottom: 5px;"><strong>IP Address:</strong> <span style="color:blue;">{{ ip_info.ip }} </span> </li>
+                <li  style="padding-bottom: 5px;"><strong>City: </strong>  <span style="color:blue;">{{ ip_info.city }} </span></li>
+                <li  style="padding-bottom: 5px;"><strong>Region: </strong> <span style="color:blue;">{{ ip_info.region }} </span></li>
+                <li  style="padding-bottom: 5px;"><strong>Country: </strong> <span style="color:blue;">{{ ip_info.country }} </span></li>
+                <li  style="padding-bottom: 5px;"><strong>Country Name: </strong> <span style="color:blue;">{{ ip_info.country_name }}</span></li>
+                <!-- <li  style="padding-bottom: 5px;"><strong>Postal Code: </strong> <span style="color:blue;">{{ ip_info.postal }}</span></li> -->
+                <li  style="padding-bottom: 5px;"><strong>Time Zone: </strong> <span style="color:blue;">{{ ip_info.timezone }}</span></li>
+                <li  style="padding-bottom: 5px;"><strong>Location: </strong> <span style="color:blue;">{{ ip_info.loc }}</span></li>
+                <!-- <li  style="padding-bottom: 5px;"><strong>Longitude:</strong> <span style="color:blue;">{{ ip_info.longitude }}</span></li>
+                <li  style="padding-bottom: 5px;"><strong>Latitude:</strong> <span style="color:blue;">{{ ip_info.latitude }}</span></li> -->
+                <li  style="padding-bottom: 5px;"><strong>Provider: </strong> <span style="color:blue;">{{ ip_info.org }}</span></li>
+                <li  style="padding-bottom: 5px;"><strong>Hostname: </strong> <span style="color:blue;">{{ ip_info.hostname }}</span></li>
+
+            </ul>
+        </div>
+    {% endif %}
+
+    <div class="bottom-center-container">
+        <a href="{{ url_for('index') }}" class="bottom-center-button">Back</a> <br>
+      </div>
+      <div class="bottom-center-container">
+    </div>
+</body>
+
+</html>

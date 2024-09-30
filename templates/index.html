@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Hosting Tools</title>
+
+</head>
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='apple-touch-icon-114x114-precomposed.png') }}">
+
+<body>
+  <!-- <div class="dns-button-container">
+    <a href="{{ url_for('dns_check') }}" class="dns-button">DNS Check</a> <br>
+    <br>
+    <a href="{{ url_for('password_generator') }}" class="dns-button">Generate Password</a><br>
+    <br>
+    <a href="{{ url_for('get_ip_info') }}" class="dns-button">Get IP Info</a>
+
+  </div> -->
+
+   
+
+
+
+  <div class="navbar"> 
+
+    <nav >
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="{{ url_for('index') }}" >Home</a>
+      </li>
+          <li class="nav-item">
+            <a href="{{ url_for('dns_check') }}" >DNS check</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ url_for('password_generator') }}" >Generate password</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url_for('get_ip_info') }}" >IP info</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('upload_file') }}" >ImapSync From File Beta</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('check_dkim') }}" >Mail Records</a>
+    </li>
+       
+      </ul>
+  </nav>
+
+
+  </div>
+  
+  <div class="container">
+    
+    
+  
+    <h1>
+      
+      <p>
+        Sync Emails
+    
+      </p>
+      <p>Imapsync Tool</p>
+  
+      <!-- <span style="color: rgb(10, 10, 10);" sty> IMAPSync Tool </span> -->
+    </h1>
+    <form action="{{ url_for('run_imapsync') }}" method="post" id="message">
+      <label for="imap_source">IMAP Source Server:</label>
+      <input type="text" id="imap_source" name="imap_source" required><br>
+  
+      <label for="user_source">Source Username:</label>
+      <input type="text" id="user_source" name="user_source" required><br>
+  
+      <label for="pass_source">Source Password:</label>
+      <input type="password" id="pass_source" name="pass_source" required><br>
+  
+      <label for="imap_dest">IMAP Destination Server:</label>
+      <input type="text" id="imap_dest" name="imap_dest" required><br>
+  
+      <label for="user_dest">Destination Username:</label>
+      <input type="text" id="user_dest" name="user_dest" required><br>
+  
+      <label for="pass_dest">Destination Password:</label>
+      <input type="password" id="pass_dest" name="pass_dest" required><br>
+  
+      <!-- <input type="submit" value="Run IMAPSync"> -->
+      <button class="dns-button" type="submit" value="Run IMAPSync">Run IMAPSync</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+
+<script>
+  document.querySelector('form').onsubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const response = await fetch('/run_imapsync', {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.json();
+    document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+  };
+</script>
+
+<script>
+    document.getElementById('message').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('message').innerHTML = 'Imapsync Started Successfully'
+
+
+
+    });
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"> -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>DNS Results</title>
+
+
+
+  <style>
+
+    .container {
+      background-color: #5350505d;
+      border:solid gray;
+      font-size: 15px;
+      border-radius: 25%;
+      filter: drop-shadow(rgba(231, 191, 12, 0.486) 0.5rem 0.5rem 1rem);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      z-index: 1;
+  }
+  </style>
+  
+
+
+
+
+</head>
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.ico') }}"> -->
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<body>
+  <div class="navbar"> 
+    <nav >
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="{{ url_for('index') }}" >Home</a>
+      </li>
+          <li class="nav-item">
+            <a href="{{ url_for('dns_check') }}" >DNS check</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ url_for('password_generator') }}" >Generate password</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url_for('get_ip_info') }}" >IP info</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ url_for('upload_file') }}" >ImapSync From File Beta</a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ url_for('check_dkim') }}" >Mail Records</a>
+    </li>
+       
+      </ul>
+  </nav>
+
+
+  </div>
+  
+  <div >
+    <h1>DNS Results</h1>
+    
+    <pre >{{ domain_dns }}</pre>
+  </div>
+  <div class="bottom-center-container">
+    <a href="{{ url_for('dns_check') }}" class="bottom-center-button">Back</a> <br>
+  </div>
+  <div class="bottom-center-container">
+  </div>
+</body>
+
+</html>

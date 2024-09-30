@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email List Taker</title>
+</head>
+<body>
+    <form action="{{ url_for('get_text_input') }}" method="post">
+        <input for="email_list" type="text">
+        <input type="submit" value="add emails">
+    
+    </form>
+    <div>{{ text_input }}</div>
+</body>
+</html>

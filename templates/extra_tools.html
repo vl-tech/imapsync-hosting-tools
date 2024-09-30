@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='embed_box_style.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check DKIM Record</title>
+</head>
+
+<!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='linux.svg') }}"> -->
+<!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='apple-touch-icon-114x114-precomposed.png') }}">
+<body >
+    <div class="navbar"> 
+
+        <nav >
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="{{ url_for('index') }}" >Home</a>
+          </li>
+              <li class="nav-item">
+                <a href="{{ url_for('dns_check') }}" >DNS check</a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="{{ url_for('password_generator') }}" >Generate password</a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="{{ url_for('get_ip_info') }}" >IP info</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('upload_file') }}" >ImapSync From File Beta</a>
+          </li>
+    
+          <li class="nav-item">
+            <a href="{{ url_for('check_dkim') }}" >Mail Records</a>
+        </li>
+           
+          </ul>
+      </nav>
+    
+    
+      </div>
+
+         
+      
+
+        <div id="dkim">
+          
+          <div id="dkim_heading">
+            <h2 >Powered by easydmarc.com</h2>
+            <hr />
+
+          </div>
+
+        <script data-type="dkim-lookup" data-id="h3dr6g" data-settings='{"widgetThemes":{},"widgetContents":{}}' src="https://easydmarc.com/tools/embedjs"></script>
+        <br>
+
+       <h2> Dkim Generator</h2>
+       <p> 
+        <script data-type="dkim-record-generator" data-id='ijk7mv' data-settings='{"widgetThemes":{},"widgetContents":{}}' src="https://easydmarc.com/tools/embedjs"> </script>
+        <br>
+
+
+
+       </p>
+
+        <h2 >SPF GENERATOR </h2>
+        <script data-type="spf-record-generator" data-id="ziv5st" data-settings='{"widgetThemes":{},"widgetContents":{}}' src="https://easydmarc.com/tools/embedjs"> </script>
+
+        </div>
+        
+
+    <div id="dmarc">
+            <h2> DMARC TOOLS [ CHECKER ]</h2><br>
+            <script data-type="dmarc-lookup" data-id="r2jjis" data-settings='{"widgetThemes":{},"widgetContents":{}}' src="https://easydmarc.com/tools/embedjs"> </script>
+            <br>
+
+            <h2> DMARC TOOLS [ GENERATOR ]</h2><br>
+            <script data-type="dmarc-record-generator" data-id="hk6ao4" data-settings='{"widgetThemes":{},"widgetContents":{}}' src="https://easydmarc.com/tools/embedjs"> </script>
+
+
+    </div>
+    <button onclick="topFunction()" id="back_to_top" type="return" >Back To top</button>
+    <div >
+      <a id="back_button" href="{{ url_for('index') }}" class="bottom-center-button">Back</a> <br>
+
+    </div>
+    <!-- <script>
+      let mybutton = document.getElementById("back_to_top");
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 10;
+  document.documentElement.scrollTop = 10;
+}
+
+
+    </script> -->
+
+
+    <script>
+      // Get the button
+      let mybutton = document.getElementById("back_to_top");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        setTimeout(function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 200); // Delay in milliseconds (200 ms in this case)
+      }
+      </script>
+</body>
+</html>
+
+
+<!-- <div class="dropdown">
+  <label for="tools">Choose a tool:</label>
+  <select id="tools" onchange="loadTool()">
+      <option value="">Select a tool</option>
+      <option value="dkim-lookup">DKIM Lookup</option>
+      <option value="spf-record-generator">SPF Record Generator</option>
+      <option value="dmarc-record-generator">DMARC Record Generator</option>
+      <option value="dmarc-lookup">DMARC Lookup</option>
+  </select>
+</div>
+
+<div id="tool-container"></div>
+
+<script>
+  const toolScripts = {
+      "dkim-lookup": {
+          "data-type": "dkim-lookup",
+          "data-id": "h3dr6g"
+      },
+      "spf-record-generator": {
+          "data-type": "spf-record-generator",
+          "data-id": "ziv5st"
+      },
+      "dmarc-record-generator": {
+          "data-type": "dmarc-record-generator",
+          "data-id": "hk6ao4"
+      },
+      "dmarc-lookup": {
+          "data-type": "dmarc-lookup",
+          "data-id": "r2jjis"
+      }
+  };
+
+  function loadTool() {
+      const selectedTool = document.getElementById('tools').value;
+      const toolContainer = document.getElementById('tool-container');
+      toolContainer.innerHTML = ''; // Clear previous tool
+
+      if (selectedTool) {
+          const script = document.createElement('script');
+          script.src = 'https://easydmarc.com/tools/embedjs';
+          script.setAttribute('data-type', toolScripts[selectedTool]["data-type"]);
+          script.setAttribute('data-id', toolScripts[selectedTool]["data-id"]);
+          script.setAttribute('data-settings', JSON.stringify({"widgetThemes":{},"widgetContents":{}}));
+          toolContainer.appendChild(script);
+      }
+  }
+</script> -->

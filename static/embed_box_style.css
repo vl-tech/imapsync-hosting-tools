@@ -1,0 +1,340 @@
+body {
+font-family: orbi;
+font-size: medium;
+background-image: linear-gradient(rgba(6, 130, 188, 0.748), rgba(255, 255, 0, 0.5)),
+url("annie-spratt-0ZPSX_mQ3xI-unsplash.jpg");
+background-blend-mode: darken, luminosity;
+
+
+
+justify-content: center;
+align-items: center;
+
+
+
+}
+@font-face {
+    font-family: "orbi";
+    src: url(../static/Orbitron-ExtraBold.ttf);
+    
+}
+
+/* #dkim {
+position: relative;
+top: 150px;
+left: 50px;
+
+display: inline-block;
+box-sizing: border-box;
+margin-bottom: 300px;
+width: 100%;
+height: 100%;
+max-width: 500px;
+min-width: 300px;
+
+} */
+#dkim {
+    width: 100%;
+  
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+
+
+}
+#dmarc {
+    /* position: relative;
+    top: 100px;
+    margin-left: 350px;
+    margin-bottom: 300px;
+    display: inline-block;
+    box-sizing: border-box; */
+    
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    
+    }
+
+
+
+div #dkim_heading {
+    box-sizing: border-box;
+    top: 100px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0 auto;
+    margin: 0;
+    font-style: oblique;
+
+}
+
+
+
+button#back_to_top {
+    font-family: orbi;
+  
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgb(32, 34, 34); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+
+
+}
+
+#back_to_top:hover{
+background-color: #1bb5ed;
+
+
+
+
+}
+a#back_button{
+    font-family: orbi;
+   position: fixed; /* Fixed/sticky position */
+   bottom: 20px; /* Place the button at the bottom of the page */
+  ; /* Place the button 30px from the right */
+   z-index: auto; /* Make sure it does not overlap */
+   border: none; /* Remove borders */
+   outline: none; /* Remove outline */
+   background-color: rgb(32, 34, 34); /* Set a background color */
+   color: white; /* Text color */
+   cursor: pointer; /* Add a mouse pointer on hover */
+  ; /* Some padding */
+  padding: 15px;
+   border-radius: 10px; /* Rounded corners */
+   font-size: 18px; /* Increase font size */
+
+
+}
+a#back_button:hover{
+    background-color: #1bb5ed;
+
+
+}
+
+
+
+nav ul li a {
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #4d2704;
+
+
+}
+
+.nav-item a:hover {
+    
+    transition: 600ms;
+    background:linear-gradient(rgba(255, 255, 255, 0.22),rgba(223, 223, 197, 0.34)) transparent;
+}
+
+.navbar {
+    position: absolute;
+    display: block;
+    font-size: 14px;
+    top: 1px;
+    left: 1px;
+    border-radius: 5%;
+    background-color: #4d2704;
+    font-family: orbi;
+    border: 1px solid gray;
+    background-color: #4d2704;
+    border-radius: 7px;
+    filter: drop-shadow(rgba(5, 5, 5, 0.486) 0.5rem 0.5rem 1rem);
+    border-color: darkgray;
+    border-collapse: separate;
+   
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+
+
+.nav-list {
+   
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.mobile_nav {
+display: none;
+
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 100%;
+        background-color: #4d2704;
+
+        overflow: hidden;
+    }
+    .nav-list {
+        flex-direction: column;
+
+
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-item a {
+        padding: 10px;
+    }
+
+
+    .bottom-center-container {
+        right: 10px;
+        left: 10px;
+    }
+
+    .dns-button-container {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .dns-button:hover {
+        background-color: #ffa51d73;
+    }
+    .dns-button {
+        display:inline-table;
+        padding: 10px 20px;
+        font-family: orbi;
+        font-size: 13px;
+        color: #fff;
+        background-color: #4d2704;
+        border-radius: 7px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .container {
+        background-color: #5350505d;
+        border:solid gray;
+        font-size: 10px;
+        margin-top: 380px;
+        margin-bottom: 30%;
+        border-radius: 75%;
+        filter: drop-shadow(rgba(231, 191, 12, 0.486) 0.5rem 0.5rem 1rem);
+        padding: 5%;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        z-index: 1;
+    }
+    .FAQ {
+        position: inherit;
+        margin-left: 150px;
+        margin-top: 200px;
+
+    }
+
+    .password {
+        
+        position: absolute;
+        font-weight: bold;
+        background-color: #5350505d;
+        border:solid gray;
+      
+        border-radius: 5px;
+        filter: drop-shadow(rgba(231, 191, 12, 0.486) 0.5rem 0.5rem 1rem);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 160px;
+
+
+}
+
+
+.bottom-center-container {
+    position: absolute;
+    bottom:0;
+    right: 90px;
+    left: 110px;
+  }
+  .bottom-center-button {
+    position: absolute;
+    font-family: orbi;
+    bottom: 20px;
+    left: 40%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #4d2704;
+    color: gray;
+    border: solid;
+    border-radius: 7px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 8px;
+}
+.bottom-center-button:hover {
+    background-color: #ffa51d7c;
+    transition: background-color 0.3s ease;
+}
+.text_position {
+
+ 
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+    width:100%;
+    bottom:100px;
+    text-align:center;
+
+}
+
+#dkim {
+    position: relative;
+    top: 220px;
+    left: 50px;
+    
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 300px;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    
+    }
+    #dmarc {
+    position: relative;
+    top: 100px;
+    margin-left: 50px;
+    margin-bottom: 300px;
+    display: inline-block;
+    box-sizing: border-box;
+    
+    width: 100%;
+    max-width: 500px;
+    
+    }
+
+}

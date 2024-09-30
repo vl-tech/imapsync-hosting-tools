@@ -1,0 +1,15 @@
+[Unit]
+Description=Python Flask Imapsync and hosting tools project. Running on waitress web server
+After=network.target
+
+[Service]
+User=tools    
+Group=tools
+WorkingDirectory=/home/tools/hosting_tools/
+Environment="PATH=/.venv/bin:/usr/local/bin:/usr/bin:/bin:"
+ExecStart=/home/tools/hosting_tools/.venv/bin/waitress-serve --listen=0.0.0.0:5000  --threads=8 wsgi:application
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
