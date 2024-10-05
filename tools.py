@@ -110,7 +110,7 @@ def upload_file_post():
         flash('File successfully processed.ImapSync Finished')
         return redirect(url_for('upload_file'))
     else:
-        flash("File Extenstion not allowed. Allowed extenstion is .txt")
+        flash("File extensions not allowed. Allowed extensions is .txt")
         return  redirect(url_for('upload_file'))
 
 def process_file(file_path):

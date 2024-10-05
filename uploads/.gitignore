@@ -1,0 +1,6 @@
+# Ignore everything in this directory
+*
+# Except this file
+# Folder for the imapsync file upload version
+# Uploaded files with credentials are stored here
+!.gitignore
