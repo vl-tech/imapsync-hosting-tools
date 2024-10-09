@@ -58,3 +58,11 @@ useradd -m tools -s /sbin/nologin
 - Make sure to install bind-utils 
 - `dnf -y install bind-utils`
 - `apt install -y bind9-utils`
+## Configuring the IpInfo tool in file tools.Python
+- On line 229 in the code replace the token with your personal account token from ipinfo official website.
+- The free api token has 50 000 requests per month.
+- Here is the actual code where you have to replace it with your token
+```pythons
+ access_token = 'ipinfo-personal-account-access-token'
+ handler = ipinfo.getHandler(access_token)
+```
