@@ -226,12 +226,12 @@ def get_ip_info():
         ip = request.form.get('ip_info')
         ip = ip.strip()
         if ip:
-            access_token = 'ipinfo-access-token'
+            access_token = 'ipinfo-personal-account-access-token'
             handler = ipinfo.getHandler(access_token)
             details = handler.getDetails(ip)
            
-            command = f"host {ip} | awk '{{print $5}}'"
-            result = subprocess.run(command, shell=True, capture_output=True, text=True)
+            get_ip_command = f"host {ip} | awk '{{print $5}}'"
+            result = subprocess.run(get_ip_command, shell=True, capture_output=True, text=True)
             
             ip_info = {
                 "ip": details.ip,
