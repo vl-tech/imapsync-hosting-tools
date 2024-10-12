@@ -67,14 +67,21 @@ useradd -m tools -s /sbin/nologin
  handler = ipinfo.getHandler(access_token)
 ```
 ## Tool Screenshots
-[DNS Check Tool](https://vladmin-dev.top/hosting-tools-images/dns-tool.jpg)
 
-![Easy Dmarc Embedded Tools](https://vladmin-dev.top/hosting-tools-images/easydmarc-tools.jpg)
+### DNS Check Tool
+![DNS Check Tool](https://vladmin-dev.top/hosting-tools-images/dns-tool.jpg)
 
+### Imapsync From File Tool
 ![Imapsync From File Tool](https://vladmin-dev.top/hosting-tools-images/imapsync-from-file.jpg)
 
+### Imapsync Tool
 ![Imapsync Tool](https://vladmin-dev.top/hosting-tools-images/imapsync.jpg)
 
+### Ip check/Ipinfo tool
 ![Ip check/Ipinfo tool](https://vladmin-dev.top/hosting-tools-images/ip-check-tool.jpg)
 
-![Pass generator tool](https://vladmin-dev.top/hosting-tools-images/password-gen-tool.jpg)
+### Pass generator tool
+![Pass generator tool](https://vladmin-dev.top/hosting-tools-images/password-gen-tool.jpg)\
+
+### Easy Dmarc Embedded Tools
+![Easy Dmarc Embedded Tools](https://vladmin-dev.top/hosting-tools-images/easydmarc-tools.jpg)
