@@ -89,6 +89,66 @@ useradd -m tools -s /sbin/nologin
  handler = ipinfo.getHandler(access_token)
 ```
 
+## Docker version
+
+### Files Needed for the docker image
+
+1. Dockerfile
+2. imapsync requirements file. You can find the apt install dependency command here as well [Imapsync Install guide](https://imapsync.lamiral.info/INSTALL.d/INSTALL.Debian.txt)
+
+- Filename *install-requirements-imapsync.sh* uploaded in the repo
+
+- Dockerfile
+
+```bash
+# Use an official Python runtime as a parent image
+FROM python:3.11
+
+# Set the working directory in the container
+WORKDIR /imapsync-hosting-tools
+
+# Copy the current directory contents into the container at /app
+COPY . /imapsync-hosting-tools
+
+# Copy requirements.txt file
+COPY requirements.txt /imapsync-hosting-tools/requirements.txt
+COPY install-requirements-bash.sh /imapsync-hosting-tools
+# Install dependencies from requirements.txt and bash
+RUN apt-get update && apt-get install -y bash && \
+    bash -c "apt-get install -y python3.11 python3.11-venv python3.11-dev wget"
+RUN bash -c "pip3 install --upgrade pip"
+RUN bash -c "pip3 install --no-cache-dir -r requirements.txt"
+RUN bash -c "wget -N https://imapsync.lamiral.info/imapsync"
+RUN chmod +x imapsync
+RUN cp imapsync /usr/local/bin/imapsync
+RUN bash install-requirements-bash.sh
+# Expose port 8000 for the Hosting tools server
+EXPOSE 8000
+
+# Define the command to run Hosting Tools on container start
+CMD ["python3.11", "-m", "flask", "run", "--host=0.0.0.0", "--port=8000"]
+```
+
+- Build the image with *docker build .* at the location of the Dockerfile and all files in folder *imapsync-hosting-tools*
+
+- Then just run the container with *docker run -d -p 8000:8000 <Docker-Image-ID>* if you
+- To check the list of docker images use `docker image ls` and obtain the id from there
+
+## Firewall setup
+
+- For firewalld use the bellow command.
+
+```bash
+firewall-cmd --permanent --add-port=8000/tcp&&firewall-cmd --reload
+
+```
+
+- If you are using ufw
+
+```bash
+ufw allow 8000&ufw reload
+```
+
 ## Tool Screenshots
 
 ### DNS Check Tool
@@ -109,7 +169,7 @@ useradd -m tools -s /sbin/nologin
 
 ### Pass generator tool
 
-![Pass generator tool](https://vladmin-dev.top/hosting-tools-images/password-gen-tool.jpg)\
+![Pass generator tool](https://vladmin-dev.top/hosting-tools-images/password-gen-tool.jpg)
 
 ### Easy Dmarc Embedded Tools
 

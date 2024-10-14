@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, jsonify,redirect,url_for,flash
 import subprocess
-from ip2geotools.databases.noncommercial import DbIpCity,InvalidRequestError
 import os
 from datetime import datetime
 import ipinfo
@@ -35,19 +34,6 @@ def run_imapsync():
     dir_path = '/home/tools/hosting_tools/imapsync-logs'
     filename = f"{user_source}_{user_dest}_{log_time}.log"
     global command
-    # Constructing the imapsync command
-    # command = (
-    #     f'imapsync  '
-    #     f' --host1 {imap_source}'
-    #     f' --user1 {user_source}'
-    #     f' --password1 "{pass_source}"'
-    #     f' --host2 {imap_dest}'
-    #     f' --user2 {user_dest}'
-    #     f' --password2 "{pass_dest}"'
-    #     f' --logdir {dir_path}'
-    #     f' --logfile {filename}'
-        
-    # )
     
     command = (
         f" nice -n18 imapsync"
@@ -244,21 +230,10 @@ def get_ip_info():
                 "timezone" : details.timezone,
                 "country_name" : details.country_name,
                 "loc" : details.loc,
-                # "latitude" : details.latitude,
-                # "longitude" : details.longitude,
-                
+                       
     
   }
-            # res = DbIpCity.get(ip, api_key="free")
-            # ip_info = {
-            #     'ip_address': res.ip_address,
-            #     'city': res.city,
-            #     'region': res.region,
-            #     'country': res.country,
-            #     'longitude': res.longitude,
-            #     'latitude' : res.latitude,
-                
-            # }
+           
 
     return render_template('ip.html', visitor_ip=visitor_ip, ip_info=ip_info)
 
