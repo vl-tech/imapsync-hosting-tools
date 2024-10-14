@@ -146,7 +146,7 @@ firewall-cmd --permanent --add-port=8000/tcp&&firewall-cmd --reload
 - If you are using ufw
 
 ```bash
-ufw allow 8000&ufw reload
+ufw allow 8000&&ufw reload
 ```
 
 ## Tool Screenshots
