@@ -46,7 +46,7 @@
 ## Test the application before setting it up as a service
 
 ```ruby
-waitress-serve.exe --listen=0.0.0.0:5000 wsgi:application
+waitress-serve --listen=0.0.0.0:5000 wsgi:application
 ```
 
 - You will be able to access the app on port 5000 with your local IP such as 192.168.1.15:5000 for example
