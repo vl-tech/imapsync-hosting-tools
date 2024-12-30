@@ -161,16 +161,16 @@ ufw allow 8000&&ufw reload
 
 ### Imapsync Tool
 
-![Imapsync Tool](https://drive.google.com/file/d/1IK1iQOdkfLI77PJUXsNYtgnLaHeeApGG/view?usp=drive_link)
+![Imapsync Tool](hosting-tools-images/imapsync.jpg)
 
 ### Ip check/Ipinfo tool
 
-![Ip check/Ipinfo tool](https://drive.google.com/file/d/15hDaKAinagT-3gRvKb9O3O-VmlL-nVR6/view?usp=drive_link)
+![Ip check/Ipinfo tool](hosting-tools-images/ip-check-tool.jpg
 
 ### Pass generator tool
 
-![Pass generator tool](https://drive.google.com/file/d/1yBmTDi04fLEMU-BcPJFDJCe045A6lFiB/view?usp=drive_link)
+![Pass generator tool](hosting-tools-images/password-gen-tool.jpg)
 
 ### Easy Dmarc Embedded Tools
 
-![Easy Dmarc Embedded Tools](https://drive.google.com/file/d/1BVoaPhGkBKnJZprMWc3EUdrvX38auhu1/view?usp=drive_link)
+![Easy Dmarc Embedded Tools](hosting-tools-images/easydmarc-tools.jpg)
