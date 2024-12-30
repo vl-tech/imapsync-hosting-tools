@@ -153,11 +153,11 @@ ufw allow 8000&&ufw reload
 
 ### DNS Check Tool
 
-![DNS Check Tool](https://drive.google.com/file/d/1Hna8y8EextFy24au4FS8_DXKhYQg6mKD/view?usp=sharing)
+![DNS Check Tool](hosting-tools-images/dns-tool.jpg)
 
 ### Imapsync From File Tool
 
-![Imapsync From File Tool](https://drive.google.com/file/d/1ifvXGXiZfv4xteBLNmiy15Kd9QcAQquC/view?usp=drive_link)
+![Imapsync From File Tool](hosting-tools-images/imapsync-from-file.jpg)
 
 ### Imapsync Tool
 
