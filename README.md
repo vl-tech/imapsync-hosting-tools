@@ -153,24 +153,24 @@ ufw allow 8000&&ufw reload
 
 ### DNS Check Tool
 
-![DNS Check Tool](https://vladmin-dev.top/hosting-tools-images/dns-tool.jpg)
+![DNS Check Tool](https://drive.google.com/file/d/1Hna8y8EextFy24au4FS8_DXKhYQg6mKD/view?usp=sharing)
 
 ### Imapsync From File Tool
 
-![Imapsync From File Tool](https://vladmin-dev.top/hosting-tools-images/imapsync-from-file.jpg)
+![Imapsync From File Tool](https://drive.google.com/file/d/1ifvXGXiZfv4xteBLNmiy15Kd9QcAQquC/view?usp=drive_link)
 
 ### Imapsync Tool
 
-![Imapsync Tool](https://vladmin-dev.top/hosting-tools-images/imapsync.jpg)
+![Imapsync Tool](https://drive.google.com/file/d/1IK1iQOdkfLI77PJUXsNYtgnLaHeeApGG/view?usp=drive_link)
 
 ### Ip check/Ipinfo tool
 
-![Ip check/Ipinfo tool](https://vladmin-dev.top/hosting-tools-images/ip-check-tool.jpg)
+![Ip check/Ipinfo tool](https://drive.google.com/file/d/15hDaKAinagT-3gRvKb9O3O-VmlL-nVR6/view?usp=drive_link)
 
 ### Pass generator tool
 
-![Pass generator tool](https://vladmin-dev.top/hosting-tools-images/password-gen-tool.jpg)
+![Pass generator tool](https://drive.google.com/file/d/1yBmTDi04fLEMU-BcPJFDJCe045A6lFiB/view?usp=drive_link)
 
 ### Easy Dmarc Embedded Tools
 
-![Easy Dmarc Embedded Tools](https://vladmin-dev.top/hosting-tools-images/easydmarc-tools.jpg)
+![Easy Dmarc Embedded Tools](https://drive.google.com/file/d/1BVoaPhGkBKnJZprMWc3EUdrvX38auhu1/view?usp=drive_link)
